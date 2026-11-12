@@ -1,0 +1,13 @@
+# Your personal Xcode settings (window layout, picked scheme)
+xcuserdata/
+*.xcuserstate
+
+# Build output - Xcode can always rebuild it
+DerivedData/
+build/
+
+# Swift Package Manager build files
+.build/
+
+# macOS folder junk
+.DS_Store
