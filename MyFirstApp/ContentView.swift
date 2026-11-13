@@ -2,11 +2,21 @@ import SwiftUI
 import Playgrounds
 
 struct ContentView: View {
+    var message: String? = nil
+    
+    
     var body: some View {
-        Text("Welcome to My First App")
-            .font(.largeTitle)
+        Text(getMessage())
+            .font(.largeTitle).foregroundStyle(.red)
             .padding()
 
+    }
+    
+    func getMessage() -> String {
+        if message != nil {
+            return message!
+        }
+        return "Hello World"
     }
 }
 
