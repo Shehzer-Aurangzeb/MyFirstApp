@@ -11,3 +11,6 @@ build/
 
 # macOS folder junk
 .DS_Store
+
+# Personal playground experiments
+Scratch.swift

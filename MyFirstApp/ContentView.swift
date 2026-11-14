@@ -1,29 +1,27 @@
 import SwiftUI
-import Playgrounds
 
+// View: only draws. Reads from the ViewModel, sends taps to it.
 struct ContentView: View {
-    var message: String? = nil
-    
-    
-    var body: some View {
-        Text(getMessage())
-            .font(.largeTitle).foregroundStyle(.red)
-            .padding()
+    @State private var viewModel = MessageViewModel()
 
-    }
-    
-    func getMessage() -> String {
-        if message != nil {
-            return message!
+    var body: some View {
+        VStack(spacing: 20) {
+            Text(viewModel.displayText)
+                .font(.largeTitle)
+                .foregroundStyle(.red)
+
+            Button("Say Hi") {
+                viewModel.sayHi()
+            }
+
+            Button("Reset") {
+                viewModel.reset()
+            }
         }
-        return "Hello World"
+        .padding()
     }
 }
 
 #Preview {
     ContentView()
-}
-
-#Playground {
-    _ = 1 + 2
 }
